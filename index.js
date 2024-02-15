@@ -1,5 +1,7 @@
 const fs = require("fs");
 
-fs.readFile("a.txt", "utf-8", (err, data) => {
-  console.log(data);
+const str = "Hie this is rupam";
+
+fs.writeFile("a.txt", str, (err) => {
+  console.log("Written Successfully");
 });
