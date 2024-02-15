@@ -1,16 +1,5 @@
-let num = 0;
+const fs = require("fs");
 
-const counter = async () => {
-  const cn = () => {
-    return setTimeout(() => {
-      num++;
-      console.log(num);
-
-      cn();
-    }, 1000);
-  };
-
-  cn();
-};
-
-counter();
+fs.readFile("a.txt", "utf-8", (err, data) => {
+  console.log(data);
+});
