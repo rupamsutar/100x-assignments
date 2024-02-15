@@ -1,7 +1,19 @@
 const fs = require("fs");
 
-const str = "Hie this is rupam";
+fs.readFile("a.txt", "utf-8", (err, data) => {
+  const updatedArr = [];
 
-fs.writeFile("a.txt", str, (err) => {
-  console.log("Written Successfully");
+  data.split("").forEach((el) => {
+    if (updatedArr[updatedArr.length - 1] === " " && el === " ") {
+      return;
+    } else {
+      updatedArr.push(el);
+    }
+  });
+
+  // console.log(updatedArr.join(""));
+
+  fs.writeFile("a.txt", updatedArr.join(""), (err) => {
+    console.log("done");
+  });
 });
